@@ -6,25 +6,25 @@ unsigned int Advertiser::totalClicks = 0;
 unsigned int Advertiser::last_id = 0;
 
 Advertiser::Advertiser()
-           :BaseAdvertising(), name("")
+           :BaseAdvertising(), id(++last_id)
 {
-    id = ++last_id;
+    setName("");
 }
 
 Advertiser::Advertiser(unsigned int c, unsigned int v)
-           :BaseAdvertising(c, v), name("")
+           :BaseAdvertising(c, v), id(++last_id)
 {
     if(c < 0 | v < 0)
         throw invalid_argument("Clicks or Views should be positive!");
-    id = ++last_id;
+    setName("");
 }
 
 Advertiser::Advertiser(unsigned int c, unsigned int v, string n)
-           :BaseAdvertising(c, v), name(n)
+           :BaseAdvertising(c, v), id(++last_id)
 {
     if(c < 0 | v < 0)
         throw invalid_argument("Clicks or Views should be positive!");
-    id = ++last_id;
+    setName(n);
 }
 
 string Advertiser::getName() const
@@ -53,7 +53,8 @@ std::string Advertiser::describeMe() const
 
 std::string Advertiser::help() const
 {
-    return "There is a long and varied history associated with the evolution of the concept of Corporate Social Responsibility (CSR)."
+    return name + "Company"
+           "There is a long and varied history associated with the evolution of the concept of Corporate Social Responsibility (CSR)."
            " However, a historical review is missing in the academic literature that portrays the evolution of the academic understanding of"
            " the concept alongside with the public and international events that influenced the social expectations with regards to corporate behavior."
            " The aim of this paper is to provide a distinctive historical perspective on the evolution of CSR as a conceptual paradigm by reviewing"

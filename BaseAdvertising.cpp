@@ -40,3 +40,16 @@ unsigned int BaseAdvertising::getViews() const
 {
     return views;
 }
+
+string BaseAdvertising::describeMe() const
+{
+    return "ID: " + to_string(id) +
+           "\tCLICKS: " + to_string(getClicks()) +
+           "\tVIEWS: " + to_string(getClicks());
+}
+
+ostream &operator<<(ostream &output, const BaseAdvertising &baseAdvertising)
+{
+    output << baseAdvertising.describeMe() << endl;
+    return output;
+}

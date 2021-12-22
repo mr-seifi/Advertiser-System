@@ -38,11 +38,11 @@ void Advertiser::setName(string n)
 
 void Advertiser::incClicks()
 {
-    ++clicks;
+    BaseAdvertising::incClicks();
     ++totalClicks;
 }
 
-std::string Advertiser::describeMe() const
+string Advertiser::describeMe() const
 {
     return "ID: " + to_string(id) +
            "\tNAME: " + name +
@@ -50,7 +50,7 @@ std::string Advertiser::describeMe() const
            "\tVIEWS: " + to_string(getViews());
 }
 
-std::string Advertiser::help() const
+string Advertiser::help() const
 {
     return name + "Company"
            "There is a long and varied history associated with the evolution of the concept of Corporate Social Responsibility (CSR)."

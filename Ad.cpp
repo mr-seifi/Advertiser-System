@@ -18,6 +18,15 @@ Ad::Ad(string title, string imgUrl, string link)
     setLink(link);
 }
 
+Ad::Ad(string title, string imgUrl, string link, Advertiser &a)
+   :BaseAdvertising(), id(++last_id)
+{
+    setTitle(title);
+    setImgUrl(imgUrl);
+    setLink(link);
+    setAdvertiser(a);
+}
+
 Ad::Ad(unsigned int c, unsigned int v, string title, string imgUrl, string link)
    :BaseAdvertising(c, v), id(++last_id)
 {

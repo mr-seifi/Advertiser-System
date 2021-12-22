@@ -9,6 +9,7 @@ class Ad : public BaseAdvertising
 public:
     Ad();
     Ad(std::string, std::string, std::string);
+    Ad(std::string, std::string, std::string, Advertiser&);
     Ad(unsigned int, unsigned int, std::string, std::string, std::string);
     std::string getTitle() const;
     void setTitle(std::string);

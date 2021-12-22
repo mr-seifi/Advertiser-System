@@ -5,51 +5,32 @@
 
 using namespace std;
 
-int main() {
+int main()
+{
 
-    cout << "------------ Test BaseAdvertising ------------" << endl;
-    BaseAdvertising baseAdvertising1, baseAdvertising2;
-    baseAdvertising1.incClicks();
-    baseAdvertising1.incClicks();
-    baseAdvertising1.incClicks();
-    baseAdvertising1.incViews();
-    baseAdvertising1.incViews();
-    baseAdvertising2.incViews();
-    baseAdvertising2.incViews();
-    baseAdvertising2.incViews();
-    baseAdvertising2.incViews();
-    baseAdvertising2.incClicks();
-    baseAdvertising2.incClicks();
-    cout << baseAdvertising1 << baseAdvertising2;
-
-    cout << "------------ Test Advertiser ------------" << endl;
-    Advertiser advertiser1, advertiser2;
-    advertiser1.setName("Amin");
-    advertiser2.setName("Hassan");
-    advertiser1.incClicks();
-    advertiser1.incClicks();
-    advertiser1.incClicks();
-    advertiser1.incClicks();
-    advertiser2.incClicks();
-    advertiser2.incClicks();
-    cout << advertiser1 << advertiser2;
-    cout << "Total Clicks: " << Advertiser::getTotalClicks() << endl;
-
-    cout << "------------ Test Ad ------------" << endl;
-    Ad ad;
-    ad.setTitle("Kenwood_central_service");
-    ad.setImgUrl("https://dam.kenwoodworld.com/562x468/assets/193626");
-    ad.setLink("https://kenwoodcs.ir");
-    ad.setAdvertiser(advertiser1);
-    ad.incClicks();
-    ad.incClicks();
-    ad.incClicks();
-    ad.incViews();
-    ad.incViews();
-    ad.incViews();
-    ad.incViews();
-    cout << ad;
-    cout << advertiser1;
+    cout << "------------ Test Cases ------------" << endl;
+    BaseAdvertising baseAdvertising;
+    Advertiser advertiser1("name1"), advertiser2("name2");
+    Ad ad1("title1", "img-url1", "link1", advertiser1),
+       ad2("title2", "img-url2", "link2", advertiser2);
+    cout << baseAdvertising
+         << ad2
+         << advertiser1;
+    ad1.incViews();
+    ad1.incViews();
+    ad1.incViews();
+    ad1.incViews();
+    ad2.incViews();
+    ad1.incClicks();
+    ad1.incClicks();
+    ad2.incClicks();
+    cout << "Advertiser2 Name: " << advertiser2.getName() << endl;
+    advertiser2.setName("new name");
+    cout << "Advertiser2 Name: " << advertiser2.getName() << endl;
+    cout << "Ad1 Clicks: " << ad1.getClicks() << endl;
+    cout << "Advertiser2 Clicks: " << advertiser2.getClicks() << endl;
+    cout << "Advertiser TotalClicks: " << Advertiser::getTotalClicks() << endl;
+    cout << "Advertiser Help: " << Advertiser::help() << endl;
 
     return 0;
 }

@@ -3,7 +3,8 @@
 
 #include <iostream>
 
-class BaseAdvertising {
+class BaseAdvertising
+{
     friend std::ostream &operator<<(std::ostream&, const BaseAdvertising&);
 public:
     BaseAdvertising();

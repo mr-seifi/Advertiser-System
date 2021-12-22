@@ -8,7 +8,7 @@ unsigned int Advertiser::last_id = 0;
 Advertiser::Advertiser()
            :BaseAdvertising(), id(++last_id)
 {
-    setName("");
+
 }
 
 Advertiser::Advertiser(unsigned int c, unsigned int v)
@@ -16,7 +16,6 @@ Advertiser::Advertiser(unsigned int c, unsigned int v)
 {
     if(c < 0 | v < 0)
         throw invalid_argument("Clicks or Views should be positive!");
-    setName("");
 }
 
 Advertiser::Advertiser(unsigned int c, unsigned int v, string n)

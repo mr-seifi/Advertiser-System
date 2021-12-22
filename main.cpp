@@ -5,13 +5,19 @@ using namespace std;
 
 int main() {
 
-    BaseAdvertising baseAdvertising;
-    baseAdvertising.incClicks();
-    baseAdvertising.incClicks();
-    baseAdvertising.incClicks();
-    baseAdvertising.incViews();
-    baseAdvertising.incViews();
-    cout << baseAdvertising.getClicks() << ' ' << baseAdvertising.getViews();
+    BaseAdvertising baseAdvertising1, baseAdvertising2;
+    baseAdvertising1.incClicks();
+    baseAdvertising1.incClicks();
+    baseAdvertising1.incClicks();
+    baseAdvertising1.incViews();
+    baseAdvertising1.incViews();
+    baseAdvertising2.incViews();
+    baseAdvertising2.incViews();
+    baseAdvertising2.incViews();
+    baseAdvertising2.incViews();
+    baseAdvertising2.incClicks();
+    baseAdvertising2.incClicks();
+    cout << baseAdvertising1 << baseAdvertising2 << endl;
 
     return 0;
 }

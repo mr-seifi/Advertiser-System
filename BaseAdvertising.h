@@ -8,15 +8,17 @@ class BaseAdvertising {
 public:
     BaseAdvertising();
     explicit BaseAdvertising(unsigned int, unsigned int = 0);
-    void incClicks();
-    unsigned int getClicks() const;
+    virtual void incClicks();
+    virtual unsigned int getClicks() const;
     void incViews();
-    unsigned int getViews() const;
+    virtual unsigned int getViews() const;
     virtual std::string describeMe() const;
+
+protected:
+    unsigned int clicks;
 
 private:
     unsigned int id;
-    unsigned int clicks;
     unsigned int views;
     static unsigned int last_id;
 };

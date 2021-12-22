@@ -45,7 +45,7 @@ string BaseAdvertising::describeMe() const
 {
     return "ID: " + to_string(id) +
            "\tCLICKS: " + to_string(getClicks()) +
-           "\tVIEWS: " + to_string(getClicks());
+           "\tVIEWS: " + to_string(getViews());
 }
 
 ostream &operator<<(ostream &output, const BaseAdvertising &baseAdvertising)
